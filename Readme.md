@@ -6,6 +6,8 @@ The Smart Classroom Assistant is a hybrid cloud application that utilizes both A
 
 ## Architecture
 
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/22538269/235811565-61725795-e11a-4c02-8ade-a8605b9e6c8c.png">
+
 The application consists of a web tier and an app tier. The web tier is hosted on an OpenStack Nova instance, while the app tier is hosted on AWS EC2 instances. The web tier receives image requests from users and forwards them to the app tier via an AWS SQS request queue. The app tier processes the images using a deep learning model, and the results are sent back to the web tier via an AWS SQS response queue.
 
 The application utilizes the following AWS services:
@@ -55,11 +57,15 @@ image_classification.py is a function that generates classification results usin
 
 sqs_utils.py contains APIs for working with SQS queues, including sending and receiving messages and managing queue length.
 
+## Testing and Evaluation
+
+The application was tested using the 100 images in the imagenet_100 folder and verified to handle multiple image uploads, proper storage in input S3 bucket, and auto-scaling of EC2 instances based on requests in the SQS queue.
+
 ## Setup and Execution
 
 To set up and execute the Smart Classroom Assistant, follow these steps:
 
-1. Create a NOVA compute instance on OpenStack using the web tier code from Project 1.
+1. Create a NOVA compute instance on OpenStack using the web tier code.
 2. Run `python3 main.py` to start the web application, allowing users to upload images.
 3. Run `python3 Controller.py` to initiate autoscaling based on the SQS queue length.
 4. App tier instances will be created as requests come in, running `python3 app_tier.py` on each instance.
