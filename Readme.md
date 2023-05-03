@@ -59,7 +59,7 @@ sqs_utils.py contains APIs for working with SQS queues, including sending and re
 
 To set up and execute the Smart Classroom Assistant, follow these steps:
 
-1. Create a NOVA compute instance on OpenStack using the web tier code from Project 1.
+1. Create a NOVA compute instance on OpenStack using the web tier code.
 2. Run `python3 main.py` to start the web application, allowing users to upload images.
 3. Run `python3 Controller.py` to initiate autoscaling based on the SQS queue length.
 4. App tier instances will be created as requests come in, running `python3 app_tier.py` on each instance.
