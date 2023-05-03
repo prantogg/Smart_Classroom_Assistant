@@ -57,6 +57,10 @@ image_classification.py is a function that generates classification results usin
 
 sqs_utils.py contains APIs for working with SQS queues, including sending and receiving messages and managing queue length.
 
+### Testing and Evaluation
+
+The application was tested using the 100 images in the imagenet_100 folder and verified to handle multiple image uploads, proper storage in input S3 bucket, and auto-scaling of EC2 instances based on requests in the SQS queue.
+
 ## Setup and Execution
 
 To set up and execute the Smart Classroom Assistant, follow these steps:
