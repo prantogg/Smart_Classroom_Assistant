@@ -1,4 +1,4 @@
-# Smart Classroom Assistant
+# Smart Classroom Assistant 2
 
 ## Overview
 
