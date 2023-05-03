@@ -6,6 +6,8 @@ The Smart Classroom Assistant is a hybrid cloud application that utilizes both A
 
 ## Architecture
 
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/22538269/235811565-61725795-e11a-4c02-8ade-a8605b9e6c8c.png">
+
 The application consists of a web tier and an app tier. The web tier is hosted on an OpenStack Nova instance, while the app tier is hosted on AWS EC2 instances. The web tier receives image requests from users and forwards them to the app tier via an AWS SQS request queue. The app tier processes the images using a deep learning model, and the results are sent back to the web tier via an AWS SQS response queue.
 
 The application utilizes the following AWS services:
